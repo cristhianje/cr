@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dashboard - Relatórios</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+</head>
+<body>
+  <div class="topbar">
+    <div class="brand">Relatórios</div>
+    <div class="actions">
+      <span id="user-email" class="muted"></span>
+      <button id="logout-btn" class="btn small">Logout</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <aside class="sidebar">
+      <ul>
+        <li><a href="#resumo">Resumo</a></li>
+        <li><a href="#vendas">Vendas Mensais</a></li>
+        <li><a href="#top-produtos">Top Produtos</a></li>
+      </ul>
+    </aside>
+
+    <main class="main">
+      <section id="resumo" class="card">
+        <h3>Resumo</h3>
+        <div class="kpis">
+          <div class="kpi"><div class="kpi-value" id="kpi-total">R$ 0,00</div><div class="kpi-label">Total de Vendas</div></div>
+          <div class="kpi"><div class="kpi-value" id="kpi-pedidos">0</div><div class="kpi-label">Pedidos</div></div>
+          <div class="kpi"><div class="kpi-value" id="kpi-clientes">0</div><div class="kpi-label">Clientes</div></div>
+        </div>
+      </section>
+
+      <section id="vendas" class="card">
+        <h3>Vendas Mensais - 2024</h3>
+        <canvas id="salesChart" height="120"></canvas>
+      </section>
+
+      <section id="top-produtos" class="card">
+        <h3>Top Produtos</h3>
+        <table id="topProducts" class="table">
+          <thead><tr><th>#</th><th>Produto</th><th>Vendas (R$)</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/firebase-config.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
