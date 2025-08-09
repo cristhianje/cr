@@ -4,6 +4,7 @@ const registerBtn = document.getElementById('show-register');
 const registerArea = document.getElementById('register-area');
 const registerForm = document.getElementById('register-form');
 const messageP = document.getElementById('message');
+const forgotPasswordLink = document.getElementById('forgotPassword');
 
 registerBtn.addEventListener('click', () => {
   registerArea.classList.toggle('hidden');
@@ -36,6 +37,24 @@ registerForm.addEventListener('submit', async (e) => {
     messageP.textContent = 'Senha ou Login inválido';
   }
 });
+
+//recuperar a senha
+
+forgotPasswordLink.addEventListener('click', async (e) => {
+  e.preventDefault();
+  const email = document.getElementById('email').value.trim();
+  if (!email) {
+    messageP.textContent = 'Por favor, informe seu e-mail para recuperação.';
+    return;
+  }
+  try {
+    await auth.sendPasswordResetEmail(email);
+    messageP.textContent = 'E-mail de recuperação enviado. Verifique sua caixa de entrada.';
+  } catch (error) {
+    messageP.textContent = 'Erro ao enviar e-mail de recuperação. Verifique o e-mail informado.';
+  }
+});
+
 
 // Se usuário já estiver logado, vai direto ao dashboard
 auth.onAuthStateChanged(user => {
