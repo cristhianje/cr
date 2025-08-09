@@ -19,7 +19,7 @@ loginForm.addEventListener('submit', async (e) => {
     // redireciona para dashboard
     window.location.href = 'dashboard.html';
   } catch (err) {
-    messageP.textContent = 'Erro: ' + err.message;
+    messageP.textContent = 'Senha ou Login inválido';
   }
 });
 
@@ -33,7 +33,7 @@ registerForm.addEventListener('submit', async (e) => {
     messageP.textContent = 'Conta criada! Redirecionando...';
     window.location.href = 'dashboard.html';
   } catch (err) {
-    messageP.textContent = 'Erro: ' + err.message;
+    messageP.textContent = 'Senha ou Login inválido';
   }
 });
 
