@@ -39,3 +39,19 @@ input{width:100%;padding:10px;margin-top:6px;border-radius:6px;border:1px solid 
 .table{width:100%;border-collapse:collapse;margin-top:10px}
 .table th,.table td{padding:8px;border-bottom:1px solid rgba(255,255,255,0.03);text-align:left;color:var(--muted)}
 .table tbody tr td{color:var(--white)}
+
+#reset-form button {
+  background-color: #17bebb;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+/* Opcional: efeito hover para o botão */
+#reset-form button:hover {
+  background-color: #149a9e; /* tom um pouco mais escuro */
+  color: black;
+}
