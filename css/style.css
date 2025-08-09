@@ -35,7 +35,14 @@ input{width:100%;padding:10px;margin-top:6px;border-radius:6px;border:1px solid 
 .hidden{display:none}
 .small{font-size:0.85rem}
 .muted{color:var(--muted)}
-
+a.btn {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+}
 .table{width:100%;border-collapse:collapse;margin-top:10px}
 .table th,.table td{padding:8px;border-bottom:1px solid rgba(255,255,255,0.03);text-align:left;color:var(--muted)}
 .table tbody tr td{color:var(--white)}
@@ -54,4 +61,8 @@ input{width:100%;padding:10px;margin-top:6px;border-radius:6px;border:1px solid 
 #reset-form button:hover {
   background-color: #149a9e; /* tom um pouco mais escuro */
   color: black;
+}
+
+#reset-form button {
+  text-decoration: none;
 }
